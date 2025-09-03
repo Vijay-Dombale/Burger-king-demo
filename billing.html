@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu & Billing - Burger King</title>
+  <link rel="stylesheet" href="css/bill.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🍔 Welcome to Burger King</h1>
+    <p>Flame-Grilled Goodness Since 1954</p>
+  </header>
+
+   <video autoplay muted loop id="bg-video">
+  <source src="images/video3.mp4" type="video/mp4">
+
+</video>
+
+  <!-- Navigation -->
+  <nav>
+   
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="staff.html">Staff</a>
+    <a href="contact.html">Contact</a>
+    
+    
+  </nav>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/pizza1.jpg" alt="Whopper">
+        <h3>Whopper Burger</h3>
+        <p>₹199</p>
+        <button onclick="addToBill('Whopper Burger',199)">Add to Bill</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pizza2.jpg" alt="Cheese Burger">
+        <h3>Cheese Burger</h3>
+        <p>₹149</p>
+        <button onclick="addToBill('Cheese Burger',149)">Add to Bill</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pizza3.jpg" alt="French Fries">
+        <h3>French Fries</h3>
+        <p>₹99</p>
+        <button onclick="addToBill('French Fries',99)">Add to Bill</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pizza4.jpg" alt="Combo Meal">
+        <h3>Combo Meal</h3>
+        <p>₹299</p>
+        <button onclick="addToBill('Combo Meal',299)">Add to Bill</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pizza5.jpeg" alt="Cold Drink">
+        <h3>Cold Drink</h3>
+        <p>₹49</p>
+        <button onclick="addToBill('Cold Drink',49)">Add to Bill</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pizza6.jpg" alt="Ice Cream">
+        <h3>Ice Cream</h3>
+        <p>₹79</p>
+        <button onclick="addToBill('Ice Cream',79)">Add to Bill</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Billing Section -->
+  <section class="billing">
+    <h2>🧾 Your Bill</h2>
+    <div class="bill-box">
+      <ul id="bill-list"></ul>
+      <p><strong>Total: ₹<span id="total">0</span></strong></p>
+      <button class="checkout">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Burger King | Designed by Vijay</p>
+  </footer>
+
+  <!-- Script for Billing -->
+  <script>
+    let total = 0;
+    function addToBill(item, price) {
+      const list = document.getElementById("bill-list");
+      const li = document.createElement("li");
+      li.textContent = `${item} - ₹${price}`;
+      list.appendChild(li);
+      total += price;
+      document.getElementById("total").textContent = total;
+    }
+
+     <footer>
+    <p>© 2025 Burger King | Designed by Vijay</p>
+  </footer>
+  </script>
+</body>
+</html>
